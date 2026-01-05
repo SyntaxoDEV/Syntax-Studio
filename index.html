@@ -9,6 +9,7 @@
         :root {
             --primary: #ff6b6b;
             --secondary: #4ecdc4;
+            --npc-color: #6c5ce7;
             --bg: #f7f9fc;
             --card-bg: #ffffff;
             --text: #2d3436;
@@ -27,115 +28,150 @@
         h1 {
             font-family: 'Fredoka One', cursive;
             color: var(--primary);
-            font-size: 3rem;
-            text-shadow: 3px 3px 0px #ffeaa7;
-            margin-bottom: 10px;
+            font-size: 3.5rem;
+            text-shadow: 4px 4px 0px #ffeaa7;
+            margin-bottom: 5px;
+            margin-top: 40px;
         }
 
         p.subtitle {
             color: #636e72;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             font-weight: 600;
+            font-size: 1.1rem;
         }
 
         .container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            max-width: 1000px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
             width: 100%;
+            padding: 20px;
         }
-
-        
 
         .item-card {
             background: var(--card-bg);
-            border-radius: 25px;
-            padding: 20px;
+            border-radius: 30px;
+            padding: 25px;
             border: 4px solid #dfe6e9;
-            box-shadow: 0 10px 0px #dfe6e9;
+            box-shadow: 0 12px 0px #dfe6e9;
             transition: all 0.2s ease;
             cursor: pointer;
             text-align: center;
             text-decoration: none;
-            display: block;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .item-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 0px #b2bec3;
+            transform: translateY(-8px);
+            box-shadow: 0 18px 0px #b2bec3;
             border-color: var(--secondary);
         }
 
-.item-image {
-    width: 100%;
-    height: 180px;
-    background: #fab1a0; /* Fajne pastelowe tło pod modelem */
-    border-radius: 15px;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    border: 3px solid #f0932b; /* Dodatkowa ramka wokół zdjęcia */
-}
+        .item-image {
+            width: 100%;
+            height: 200px;
+            background: #fab1a0;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid rgba(0,0,0,0.05);
+        }
 
-.item-image img {
-    max-width: 90%; /* Zostawia trochę miejsca od brzegów */
-    max-height: 90%;
-    object-fit: contain; /* To sprawia, że zdjęcie się idealnie dopasuje */
-    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2)); /* Dodaje głębi modelowi */
-}
+        .item-image img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.15));
+        }
 
         .item-title {
             font-family: 'Fredoka One', cursive;
             color: var(--text);
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             margin: 10px 0;
+        }
+
+        .description-text {
+            color: #636e72;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.4;
         }
 
         .btn {
             background: var(--secondary);
             color: white;
-            padding: 10px 20px;
+            padding: 12px 25px;
             border-radius: 50px;
             border: none;
             font-family: 'Fredoka One', cursive;
-            font-size: 1rem;
-            box-shadow: 0 4px 0px #00b894;
-            margin-top: 10px;
-            display: inline-block;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 0px #00b894;
+            transition: all 0.1s;
+        }
+
+        .item-card:hover .btn {
+            transform: scale(1.05);
         }
 
         .badge {
+            align-self: center;
             background: #ffeaa7;
             color: #d63031;
-            padding: 5px 15px;
+            padding: 6px 18px;
             border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        footer {
+            margin-top: 60px;
+            color: #b2bec3;
+            font-weight: 600;
         }
     </style>
 </head>
 <body>
 
     <h1>SYNTAX STUDIO</h1>
-    <p class="subtitle">Best high-quality assets for your Roblox games!</p>
+    <p class="subtitle">High-quality Roblox assets for legendary developers!</p>
 
     <div class="container">
         <a href="LockerDoors.html" class="item-card">
             <div class="badge">POPULAR</div>
-            <div class="item-image">
-                <img src="Assets/DoorsLocker.png" alt="Doors Locker">
+            <div class="item-image" style="background: #fab1a0;">
+                <img src="Assets/DoorsLocker.png" alt="Locker from Doors">
             </div>
-            <div class="item-title">Locker from Doors</div>
-            <p style="color: #636e72;">Fully scripted locker system just like in DOORS!</p>
+            <div>
+                <div class="item-title">Locker from Doors</div>
+                <p class="description-text">Fully scripted locker system with smooth animations and hiding mechanics.</p>
+            </div>
             <div class="btn">GET ASSET</div>
         </a>
 
-        </div>
+        <a href="SmartNPC.html" class="item-card">
+            <div class="badge" style="background: #55efc4; color: #00b894;">NEW</div>
+            <div class="item-image" style="background: #a29bfe;">
+                <img src="Assets/SmartNPC.png" alt="Smart NPC AI">
+            </div>
+            <div>
+                <div class="item-title">Smart NPC AI</div>
+                <p class="description-text">Advanced AI with Pathfinding and a built-in Save Spot system!</p>
+            </div>
+            <div class="btn" style="background: var(--npc-color); box-shadow: 0 5px 0px #4834d4;">GET ASSET</div>
+        </a>
+    </div>
+
+    <footer>Created by Syntax</footer>
 
 </body>
 </html>
